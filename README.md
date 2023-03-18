@@ -1,15 +1,15 @@
 # vite-colorui-vue3
 
+- 已将所有依赖升级到最新版本
+
 ColorUI for Vue3 and Vite 将uni-app版本的ColorUI升级到最新，并搭配Vite使用，大幅提升性能，减少编译时长
+
+### Tips: Vue3/Vite版要求 node 版本^14.18.0 || >=16.0.0
+
 
 # 为什么升级 ? 
 
 ColorUI目前仅支持Vue2 和 webpack ，Vue3 性能上得到了很大的提升，而Vite打包编译速度更快
-
-# Tips
-
-Vue3/Vite版要求 node 版本^14.18.0 || >=16.0.0
-
 
 # 升级遇到的问题
 
