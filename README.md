@@ -71,3 +71,46 @@ Sass 使用的版本必须小于 1.33.0
 
 - slots.xxx 修改 成 $slots.xxx
 
+### Css的值为0 导致 calc 失效
+
+- (0rpx改成0px)目前也不知道什么原因、解决办法就是把他变成0px就不会转换成0了
+
+```css
+test{
+    --textSize:0rpx;
+}
+转换后会变成
+test{
+    --textSize:0;
+}
+calc 就会执行失败，导致样式不对
+
+请修改成
+
+test {
+    --textSize:0px;
+}
+```
+
+### ColorUI中将Vue2的$children修改成vue3的
+
+- this.$children 可解决样式错乱，如tab、表单图片挤压等
+
+```javascript
+this._computedChildQuery(this.$children);
+_computedChildQuery(array) {
+    if (Array.isArray(array)) {
+        array.forEach(child => {
+            let childName = child.$options.name;
+            if (childName == 'UiTabItem') {
+                if (typeof child._computedQuery == 'function') {
+                    child._computedQuery(); // 调用子组件方法已被移除
+                }
+            } else if (child.$children) {
+                this._computedChildQuery(child.$children);
+            }
+        });
+    }
+}
+
+```

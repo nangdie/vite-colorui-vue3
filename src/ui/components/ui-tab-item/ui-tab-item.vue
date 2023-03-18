@@ -29,6 +29,9 @@ export default {
 	watch: {},
 	created() {},
 	mounted() {
+		this.$nextTick(function() {
+			this._computedQuery();
+		});
 		uni.onWindowResize(res => {
 			this._computedQuery();
 		});

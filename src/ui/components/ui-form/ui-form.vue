@@ -21,7 +21,7 @@ export default {
 		}
 	},
 	mounted() {
-		this.titleWidth = 0;
+		this.titleWidth = 1.2;
 		this._deepSetTitleWidth(this.$children);
 	},
 	updated() {
