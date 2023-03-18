@@ -1,6 +1,6 @@
 
 @import './icon';				//核心图标库  
-@import '@/app/scss/icon/style';				//核心图标库  
+@import '@/app/scss/icon/_style.scss';				//核心图标库  
 .icon-spin {
 	animation: icon-spin 2s infinite linear;
 }

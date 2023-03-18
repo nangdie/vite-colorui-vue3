@@ -1,10 +1,22 @@
-import Vue from 'vue'
 import store from '@/ui/store'
 import modal from '@/ui/js/modal.js'
 import request from '@/ui/js/request.js'
 import util from '@/ui/js/util.js'
 import mixin from '@/ui/js/mixin.js'
 import app from "@/app/index.js"
+
+import App from '../App.vue'
+import { createApp } from 'vue'
+const app = createApp(App);
+for (const key in modal) {
+	const name = key.charAt(0).toUpperCase() + key.slice(1)
+	app.config.globalProperties['$' + name] = modal[key];
+};
+for (const key in { request, util }) {
+	app.config.globalProperties['$' + key] = modal[key];
+};
+
+
 
 if (uni.getStorageSync("VUE_APP_NAME") != process.env.VUE_APP_NAME) {
 	uni.clearStorage();

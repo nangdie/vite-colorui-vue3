@@ -1,4 +1,3 @@
-import Vue from 'vue'
  /**
   * getUuid 生成唯一id
   */
@@ -59,5 +58,3 @@ import Vue from 'vue'
  	copyText
  }
  export default util
-
- Vue.prototype.$util = util;

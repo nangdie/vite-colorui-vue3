@@ -7,10 +7,29 @@
 			}
 		}
 	],
+	"easycom": {
+		"ui-(.*)": "@/ui/components/ui-$1/ui-$1.vue",
+		"app-(.*)": "@/app/components/app-$1/app-$1.vue"
+	},
 	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
-	}
+		"mp-alipay": {
+			/* 支付宝小程序特有相关 */
+			"defaultTitle": "",
+			"transparentTitle": "always",
+			"titlePenetrate": "YES",
+			"allowsBounceVertical": "NO"
+		},
+		"app-plus": {
+			/* App特有相关 */
+			"bounce": "none"
+		},
+		// "disableScroll":true,
+		"pageOrientation": "auto",
+		"navigationBarTitleText": "ColoruiAppTemplate",
+		"navigationBarBackgroundColor": "#007AFF",
+		"backgroundColor": "#1b1b1b",
+		"backgroundColorTop": "#1b1b1b",
+		"backgroundColorBottom": "#262626",
+		"navigationStyle": "custom"
+	},
 }

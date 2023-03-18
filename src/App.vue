@@ -10,4 +10,7 @@ onHide(() => {
   console.log("App Hide");
 });
 </script>
-<style></style>
+<style lang="scss">
+/*每个页面公共css */
+@import '@/ui/scss/ui.scss';
+</style>

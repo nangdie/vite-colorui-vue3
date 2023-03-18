@@ -1,4 +1,3 @@
- import Vue from 'vue'
  import store from '@/ui/store'
  const modal = {
     show(name) {
@@ -30,11 +29,4 @@
 	},
 }
 
-Vue.prototype.$Modal = modal 
-Vue.prototype.$Tips = modal.tips
-Vue.prototype.$Toast = modal.toast
-Vue.prototype.$Success = modal.success
-Vue.prototype.$Error = modal.error
-Vue.prototype.$Loading = modal.loading
-Vue.prototype.$HideLoading = modal.hideloading
 export default modal

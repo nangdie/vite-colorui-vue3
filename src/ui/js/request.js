@@ -1,4 +1,3 @@
-import Vue from 'vue'
 import store from '@/ui/store'
 
 function request(url, data = {}, method = "GET") {
@@ -69,6 +68,4 @@ function request(url, data = {}, method = "GET") {
 		})
 	});
 }
-
-Vue.prototype.$request = request
 export default request

@@ -1,7 +1,5 @@
-import Vue from 'vue'
-import {
-	mapState
-} from 'vuex';
+import { mapState } from 'vuex';
+
 const mixin = {
 	data() {
 		return {
@@ -206,4 +204,3 @@ const mixin = {
 }
 
 export default mixin
-Vue.mixin(mixin)

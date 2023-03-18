@@ -1,10 +1,31 @@
 <template>
-  <view class="content">
-    <image class="logo" src="/static/logo.png" />
-    <view class="text-area">
-      <text class="title">{{ title }}</text>
+  <ui-sys>
+    <view class="content">
+      <image class="logo" src="/static/logo.png" />
+      <view class="text-area">
+        <text class="title">{{ title }}</text>
+      </view>
+      <view>
+        <view>test colorui</view>
+        <view>
+          <view class="p-3 flex-between">
+            <button class="ui-btn bg-orange">按钮</button>
+            <button class="ui-btn bg-orange-thin">按钮</button>
+            <button class="ui-btn bg-orange-gradient">按钮</button>
+            <button class="ui-btn bg-orange-light">按钮</button>
+          </view>
+          <view class="p-3 flex-between">
+            <button class="ui-btn">按钮</button>
+            <button class="ui-btn">按钮</button>
+            <button class="ui-btn round">按钮</button>
+            <button class="ui-btn icon">
+              <text class="cicon-link" />
+            </button>
+          </view>
+        </view>
+      </view>
     </view>
-  </view>
+  </ui-sys>
 </template>
 
 <script setup lang="ts">

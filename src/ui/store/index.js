@@ -1,10 +1,8 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import { createStore } from 'vuex'
 import app from '@/app/store'
 import modal from '@/ui/store/modal.js'
 
-Vue.use(Vuex)
-const store = new Vuex.Store({
+const store = createStore({
 	state: {
 		sys_theme: uni.getStorageSync('sys_theme') ? uni.getStorageSync('sys_theme') : app.state.theme, // light dark
 		sys_main: uni.getStorageSync('sys_main') ? uni.getStorageSync('sys_main') : app.state.main, // color
@@ -80,13 +78,13 @@ const store = new Vuex.Store({
 			document.getElementsByTagName('html')[0].className =
 				`theme-${state.sys_theme} main-${state.sys_main}`;
 			// #endif
-			
+
 			if (data == 'auto') {
 				// #ifdef MP
-				this.commit('setStatusStyle',uni.getSystemInfoSync().theme == 'light' ? 'dark' : 'light');
+				this.commit('setStatusStyle', uni.getSystemInfoSync().theme == 'light' ? 'dark' : 'light');
 				// #endif
 			} else {
-				this.commit('setStatusStyle',data == 'light' ? 'dark' : 'light');
+				this.commit('setStatusStyle', data == 'light' ? 'dark' : 'light');
 			}
 		},
 		setText(state, data) {
@@ -109,11 +107,11 @@ const store = new Vuex.Store({
 					}
 				});
 				// #endif
-			
+
 				// #ifdef APP-PLUS
 				plus.navigator.setStatusBarStyle('light');
 				// #endif
-			
+
 				// #ifdef MP-ALIPAY
 				uni.setNavigationBarColor({
 					frontColor: '#ffffff',
@@ -131,11 +129,11 @@ const store = new Vuex.Store({
 					}
 				});
 				// #endif
-			
+
 				// #ifdef APP-PLUS
 				plus.navigator.setStatusBarStyle('dark');
 				// #endif
-			
+
 				// #ifdef MP-ALIPAY
 				uni.setNavigationBarColor({
 					frontColor: '#000000'
@@ -154,7 +152,7 @@ const store = new Vuex.Store({
 			// #endif
 		},
 	},
-	actions: { 
+	actions: {
 	},
 	modules: {
 		app,
@@ -162,6 +160,4 @@ const store = new Vuex.Store({
 	}
 })
 
-
-Vue.prototype.$store = store
 export default store;
