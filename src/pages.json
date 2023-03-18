@@ -1,4 +1,11 @@
 {
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			"ui-(.*)": "@/ui/components/ui-$1/ui-$1.vue",
+			"app-(.*)": "@/app/components/app-$1/app-$1.vue"
+		}
+	},
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
 			"path": "pages/index/index",
@@ -7,10 +14,6 @@
 			}
 		}
 	],
-	"easycom": {
-		"ui-(.*)": "@/ui/components/ui-$1/ui-$1.vue",
-		"app-(.*)": "@/app/components/app-$1/app-$1.vue"
-	},
 	"globalStyle": {
 		"mp-alipay": {
 			/* 支付宝小程序特有相关 */
@@ -31,5 +34,5 @@
 		"backgroundColorTop": "#1b1b1b",
 		"backgroundColorBottom": "#262626",
 		"navigationStyle": "custom"
-	},
+	}
 }

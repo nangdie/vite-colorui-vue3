@@ -1,6 +1,6 @@
 # vite-colorui-vue3
 
-- 已将所有依赖升级到最新版本
+- 已将所有依赖升级到最新版本，如果你有更好的方案，欢迎提交。
 
 ColorUI for Vue3 and Vite 将uni-app版本的ColorUI升级到最新，并搭配Vite使用，大幅提升性能，减少编译时长
 
@@ -35,10 +35,24 @@ Sass 使用的版本必须小于 1.33.0
 
 ### Uni-APP 中的 easycom 失效，无法使用全局组件
 
-解决办法
-
 ```
-把UI/components下面的组件都移植到 src/components下
+将老版本的引入方式
+    "easycom": {
+		"ui-(.*)": "@/ui/components/ui-$1/ui-$1.vue",
+		"app-(.*)": "@/app/components/app-$1/app-$1.vue"
+	}
+修改为：
+    "easycom": {
+        "autoscan": true,
+        "custom": {
+            "ui-(.*)": "@/ui/components/ui-$1/ui-$1.vue",
+            "app-(.*)": "@/app/components/app-$1/app-$1.vue"
+        }
+    }
+
+或者，你也可以
+    把UI/components下面的组件都移植到 src/components下
+    注意目录结构：src/components/组件名称/组件名称.vue
 ```
 
 ### 将vue2挂载原型链方法修改
